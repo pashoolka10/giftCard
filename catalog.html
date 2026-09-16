@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Каталог карт пополнения — GameCard</title>
-	<meta name="description" content="Каталог карт пополнения PlayStation Store и Apple Gift Card, пополнение Steam по логину. Фильтр по платформе, стране, номиналу и цене.">
+	<meta name="description" content="Каталог карт пополнения PlayStation Store и Apple Gift Card, игры для PS5 и пополнение Steam по логину.">
 	<link rel="icon" href="images/logo.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="styles.css" id="mainStyles">
 	<link rel="stylesheet" href="print.css" id="printStyles" media="not all">
@@ -27,52 +27,32 @@
 <main>
 	<div class="container page-title">
 		<h1 class="page-title__title">Каталог товаров</h1>
-		<p class="page-title__note">Доступно <span id="catalogCount">12 товаров</span>. Недоступные сочетания фильтров подсвечиваются серым — так работает «умный фильтр».</p>
+		<p class="page-title__note">Доступно <span id="catalogCount">10 товаров</span>. Выберите карту или игру и добавьте её в корзину.</p>
 	</div>
 
-	<div class="container catalog-layout">
-		<aside class="catalog-sidebar">
-			<div class="filters" id="filters"></div>
-			<button class="button button_ghost button_small" type="button" id="resetFilters">Сбросить фильтры</button>
-		</aside>
-
-		<section>
-			<div class="catalog-toolbar">
-				<label class="visually-hidden" for="sortSelect">Сортировка</label>
-				<select class="select" id="sortSelect">
-					<option value="popular">Сначала популярные</option>
-					<option value="price-asc">Цена: по возрастанию</option>
-					<option value="price-desc">Цена: по убыванию</option>
-					<option value="rating">По рейтингу</option>
-				</select>
-				<button class="button button_ghost button_small" type="button" data-print-toggle>Версия для печати</button>
-			</div>
-
-			<section class="steam-block" id="steamBlock" hidden>
-				<h2 class="steam-block__title">Пополнение Steam</h2>
-				<p class="steam-block__text">
-					Карты пополнения для Steam не нужны: укажите логин аккаунта и сумму в рублях —
-					мы пополним кошелёк после подтверждения заказа.
-				</p>
-				<p class="form__message" id="steamSuccess" hidden></p>
-				<form class="form" id="steamForm">
-					<div class="form__field">
-						<label class="form__label" for="steamLogin">Логин Steam</label>
-						<input class="form__input" id="steamLogin" name="login" type="text" placeholder="Например: gamer_2026" required>
-					</div>
-					<div class="form__field">
-						<label class="form__label" for="steamAmount">Сумма пополнения, ₽</label>
-						<input class="form__input" id="steamAmount" name="amount" type="number" min="100" max="15000" step="50" placeholder="1000" required>
-					</div>
-					<button class="button" type="submit">Пополнить</button>
-				</form>
-			</section>
-
-			<div class="products" id="catalogItems"></div>
-			<p class="catalog-empty" id="catalogEmpty" hidden>По выбранным условиям ничего не найдено. Попробуйте изменить фильтр или сбросить его.</p>
+	<div class="container">
+		<section class="steam-block" id="steamBlock">
+			<h2 class="steam-block__title">Пополнение Steam</h2>
+			<p class="steam-block__text">
+				Карты пополнения для Steam не нужны: укажите логин аккаунта и сумму в рублях —
+				мы пополним кошелёк после подтверждения заказа.
+			</p>
+			<p class="form__message" id="steamSuccess" hidden></p>
+			<form class="form" id="steamForm">
+				<div class="form__field">
+					<label class="form__label" for="steamLogin">Логин Steam</label>
+					<input class="form__input" id="steamLogin" name="login" type="text" placeholder="Например: gamer_2026" required>
+				</div>
+				<div class="form__field">
+					<label class="form__label" for="steamAmount">Сумма пополнения, ₽</label>
+					<input class="form__input" id="steamAmount" name="amount" type="number" min="100" max="15000" step="50" placeholder="1000" required>
+				</div>
+				<button class="button" type="submit">Пополнить</button>
+			</form>
 		</section>
-	</div>
 
+		<div class="products" id="catalogItems"></div>
+	</div>
 </main>
 
 <footer class="site-footer">

@@ -15,11 +15,6 @@ const COUNTRIES = {
 	russia: "Россия"
 };
 
-/* Steam пополняется по логину, карт пополнения у него нет,
-   но платформа должна быть в фильтре. */
-const STEAM_PLATFORM = "steam";
-const PLATFORM_VALUES = ["playstation", "apple", "steam", "games"];
-
 const products = [
 	{
 		id: "ps-in-1000",
@@ -147,14 +142,7 @@ const products = [
 	}
 ];
 
-/* Группы фильтра. Порядок групп — это порядок блоков в боковой панели каталога. */
-const filterConfig = [
-	{ key: "platform", title: "Платформа" },
-	{ key: "country", title: "Страна" },
-	{ key: "nominal", title: "Номинал" }
-];
-
-/* Красивые подписи для значений фильтра. */
+/* Подписи характеристик товара для карточек. */
 const VALUE_TITLES = {
 	playstation: "PlayStation",
 	apple: "Apple",
@@ -167,5 +155,3 @@ const VALUE_TITLES = {
 	russia: "Россия"
 };
 
-/* Максимальная цена для ползунка «Цена». */
-const MAX_PRICE = 12000;
